@@ -1,0 +1,204 @@
+/**
+ * Filename:  _intro-section.scss
+ * Author:    Martin Dwyer
+ * Purpose:   Provides styling for the LandingPage component
+ * Date Mod:  December 8, 2021
+ *
+ */
+
+@use "../custom"as *;
+@use "../components/mixins"as *;
+@use "../components/animations"as *;
+
+// landing page wrapper
+.intro-section {
+    min-height: 100vh;
+    padding: 10rem 0 0 0;
+    width: 100%;
+
+    // reducing padding for lower screens
+    @include media-breakpoint-down(lg) {
+        padding: 4rem 0 0 0;
+    }
+
+    a {
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+    // watch our video play icon
+    .btn-rounded span i {
+        font-size: 1.25rem !important;
+    }
+
+    // class .intros applies to both columns on LandingPage
+    .intros {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        // heading text
+        .display-2 {
+            @include logoFontFamily;
+            font-weight: 500;
+            text-shadow: 0.25rem 0.25rem 0.25rem rgba($black, 1);
+
+            i {
+                margin-left: 1rem;
+                align-self: center;
+                justify-self: center;
+            }
+
+            @media only screen and (max-width: 1250px) {
+                font-size: 3.5rem;
+            }
+
+            @media only screen and (max-width: 992px) {
+                margin-top: 5rem;
+            }
+
+            @media only screen and (max-width: 550px) {
+                font-size: 2.75rem;
+            }
+
+            @media only screen and (max-width: 380px) {
+                font-size: 1.75rem;
+            }
+
+            &--intro {
+                @include logoFontFamily;
+                font-size: 2rem;
+                font-weight: 400;
+
+                @media only screen and (max-width: 992px) {
+                    font-size: 2rem;
+                }
+
+                @media only screen and (max-width: 550px) {
+                    font-size: 1.5rem;
+                }
+
+                @media only screen and (max-width: 380px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        // site tag line in first column
+        .display-2--description {
+            color: $white;
+
+            @media only screen and (max-width: 992px) {
+                font-size: 1rem;
+            }
+
+            @media only screen and (max-width: 400px) {
+                font-size: 0.8rem;
+
+                .name-style {
+                    font-size: 1rem;
+                }
+
+                .logo-style {
+                    font-size: 1.1rem;
+                }
+            }
+
+            padding: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        // From here down covers the right (2nd) column on the
+        // LandingPage component
+        .video-box {
+            position: relative;
+            box-shadow: 2rem 2rem 2rem rgba($black, 0.5);
+
+            @media only screen and (max-width: 992px) {
+                display: none !important;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+                max-height: 50vh;
+                width: 70%;
+                padding: 1rem;
+                background-color: rgba($white, 0.2);
+                border-radius: 8px;
+
+                margin-top: 5rem;
+            }
+
+            button {
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                position: absolute !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+
+                span {
+                    box-sizing: border-box;
+                    margin-top: 5rem;
+
+                    i {
+                        font-size: 4rem;
+                        color: rgba($secondary, 0.85);
+                    }
+                }
+
+                // Note that the animation 'pulse-border' keyframe can be found
+                // in components/animations
+                span.border-animation {
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: 4rem;
+                    height: 4rem;
+                    border: 0.55rem solid rgba($white, 0.5);
+                    border-radius: 50%;
+                    animation: pulse-border 4s linear infinite;
+
+                    &--border-1 {
+                        animation-delay: 1s;
+                    }
+
+                    &--border-2 {
+                        animation-delay: 2s;
+                    }
+                }
+            }
+        }
+    }
+
+    .penguin-video-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        // "watch our video" button
+        .btn-rounded {
+            display: block;
+            margin: 0 auto;
+            border: none;
+            background-color: rgba($white, 0.65);
+            box-shadow: 0 0 2rem rgba($white, 1);
+
+            &:hover {
+                box-shadow: 0 0 2rem rgba($secondary, 1);
+
+                a {
+                    background-color: $white;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
