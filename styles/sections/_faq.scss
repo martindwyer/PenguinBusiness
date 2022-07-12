@@ -34,7 +34,7 @@
         }
 
         .accordion-button {
-            font-size: 1.2rem;
+            font-size: 1.75rem;
             font-weight: 600;
             border-bottom: 1px solid $primary;
 
@@ -47,6 +47,20 @@
         .accordion-body {
             background-color: rgba($white, 1);
             text-align: left;
+
+            h5 {
+                text-shadow: none;
+            }
+
+            ul {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .cost {
+                color: #009900;
+                font-weight: 600;
+            }
         }
 
         @include media-breakpoint-down(lg) {

@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
-import FaqPage from "../../components/FaqPage";
+import PackagesPage from "../../components/PackagesPage";
 
 const FAQ = () => {
   return (
     <Layout>
-      <FaqPage />
+      <PackagesPage />
     </Layout>
   );
 };

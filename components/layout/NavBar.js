@@ -11,8 +11,7 @@ const NavBar = () => {
   const homeLink = useRef();
   const aboutLink = useRef();
   const servicesLink = useRef();
-  const testimonialsLink = useRef();
-  const faqLink = useRef();
+  const packagesLink = useRef();
   const contactLink = useRef();
 
   useEffect(() => {
@@ -20,43 +19,37 @@ const NavBar = () => {
       homeLink.current.classList.remove("active");
       aboutLink.current.classList.add("active");
       servicesLink.current.classList.remove("active");
-      testimonialsLink.current.classList.remove("active");
-      faqLink.current.classList.remove("active");
+      packagesLink.current.classList.remove("active");
       contactLink.current.classList.remove("active");
     } else if (pathname.includes("services")) {
       homeLink.current.classList.remove("active");
       aboutLink.current.classList.remove("active");
       servicesLink.current.classList.add("active");
-      testimonialsLink.current.classList.remove("active");
-      faqLink.current.classList.remove("active");
+      packagesLink.current.classList.remove("active");
       contactLink.current.classList.remove("active");
     } else if (pathname.includes("testimonials")) {
       homeLink.current.classList.remove("active");
       aboutLink.current.classList.remove("active");
       servicesLink.current.classList.remove("active");
-      testimonialsLink.current.classList.add("active");
-      faqLink.current.classList.remove("active");
+      packagesLink.current.classList.remove("active");
       contactLink.current.classList.remove("active");
-    } else if (pathname.includes("faq")) {
+    } else if (pathname.includes("packages")) {
       homeLink.current.classList.remove("active");
       aboutLink.current.classList.remove("active");
       servicesLink.current.classList.remove("active");
-      testimonialsLink.current.classList.remove("active");
-      faqLink.current.classList.add("active");
+      packagesLink.current.classList.add("active");
       contactLink.current.classList.remove("active");
     } else if (pathname.includes("contact")) {
       homeLink.current.classList.remove("active");
       aboutLink.current.classList.remove("active");
       servicesLink.current.classList.remove("active");
-      testimonialsLink.current.classList.remove("active");
-      faqLink.current.classList.remove("active");
+      packagesLink.current.classList.remove("active");
       contactLink.current.classList.add("active");
     } else {
       homeLink.current.classList.add("active");
       aboutLink.current.classList.remove("active");
       servicesLink.current.classList.remove("active");
-      testimonialsLink.current.classList.remove("active");
-      faqLink.current.classList.remove("active");
+      packagesLink.current.classList.remove("active");
       contactLink.current.classList.remove("active");
     }
   }, [pathname]);
@@ -89,79 +82,29 @@ const NavBar = () => {
             <ul className="navbar-nav">
               <li className="nav-item d-flex align-items-center ">
                 <Link href="/">
-                  <a ref={homeLink} className="nav-link active">
+                  <a ref={homeLink} className="nav-link">
                     Home
                   </a>
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link href="/about">
-                  <button
-                    className="nav-link dropdown-toggle"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    ref={aboutLink}
-                  >
-                    About
-                  </button>
-                </Link>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <Link href="/about">
-                      <a className="dropdown-item">Overview</a>
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link href="/about/team/ceo">
-                      <a className="dropdown-item">Leadership</a>
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item dropdown">
-                <Link href="/services">
-                  <button
-                    className="nav-link dropdown-toggle"
-                    id="servicesDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    ref={servicesLink}
-                  >
-                    Services
-                  </button>
-                </Link>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="servicesDropdown"
-                >
-                  <li>
-                    <Link href="/services">
-                      <a className="dropdown-item">Overview</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/portfolio">
-                      <a className="dropdown-item">Tour Photo Gallery</a>
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-
               <li className="nav-item d-flex align-items-center ">
-                <Link href="/testimonials">
-                  <a ref={testimonialsLink} className="nav-link">
-                    Testimonials
+                <Link href="/about">
+                  <a ref={aboutLink} className="nav-link">
+                    About
                   </a>
                 </Link>
               </li>
               <li className="nav-item d-flex align-items-center ">
-                <Link href="/faq">
-                  <a ref={faqLink} className="nav-link">
-                    Faq
+                <Link href="/services">
+                  <a ref={servicesLink} className="nav-link">
+                    Services
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item d-flex align-items-center ">
+                <Link href="/packages">
+                  <a ref={packagesLink} className="nav-link">
+                    Packages
                   </a>
                 </Link>
               </li>

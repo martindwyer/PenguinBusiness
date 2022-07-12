@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Seo from "./layout/Seo";
 import Script from "next/script";
 import Image from "next/image";
+import Link from "next/link";
 import { FaAnchor } from "react-icons/fa";
 import Photo from "./utilities/Photo";
 import penguinSvg from "./images/pinguino.svg";
@@ -97,26 +98,17 @@ const LandingPage = () => {
                 loading="eager"
                 layout="fixed"
               />
-
-              <button>
-                <span>
-                  <i className="bi bi-play-circle-fill"></i>
-                </span>
-                <span className="border-animation border-animation--border-1"></span>
-                <span className="border-animation border-animation--border-2"></span>
-              </button>
             </div>
           </div>
           <div className="col-lg-6 penguin-video-button">
-            <button
-              type="button"
-              className="glightbox rounded-pill btn-rounded"
-            >
-              Penguin Video
-              <span>
-                <i className="bi bi-play-fill"></i>
-              </span>
-            </button>
+            <Link href="/contact">
+              <a type="button" className="rounded-pill btn-rounded">
+                Contact Us
+                <span>
+                  <i className="fa-solid fa-envelope"></i>
+                </span>
+              </a>
+            </Link>
           </div>
           <div className="col-lg-6"></div>
         </div>
